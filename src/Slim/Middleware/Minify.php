@@ -44,7 +44,7 @@ class Minify extends \Slim\Middleware
                 $squeezedHTML = preg_replace('/<!--([^\[|(<!)].*)-->/', '', $body);
                 $squeezedHTML = preg_replace('/(?<!\S)\/\/\s*[^\r\n]*/', '', $squeezedHTML);
                 // Clean Whitespace
-                $squeezedHTML = preg_replace('/\s{2,}/', '', $squeezedHTML);
+                $squeezedHTML = preg_replace('/\s{2,}/', ' ', $squeezedHTML);
                 $squeezedHTML = preg_replace('/(\r?\n)/', '', $squeezedHTML);
 
 		$res->body($squeezedHTML);
